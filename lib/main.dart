@@ -1,5 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import "package:flutter/material.dart";
+import 'package:shubham_1/pages/homePage.dart';
+
 import 'package:shubham_1/pages/loginPage.dart';
+import 'package:shubham_1/utils/routes.dart';
 
 void main()
 {
@@ -13,9 +18,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:LoginPage(),
-    debugShowCheckedModeBanner:false
-      
+    
+    debugShowCheckedModeBanner:false,
+      initialRoute: "/",
+      routes: {
+        "/":(context)=>LoginPage(),
+        MyRoutes.homeRoute:(context)=>HomePage(),
+        MyRoutes.loginRoute:(context)=>LoginPage(),
+
+      },
     );
   }
 }
